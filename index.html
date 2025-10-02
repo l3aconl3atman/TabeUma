@@ -36,29 +36,33 @@
         alt="…"
       />
     </div>
-    <header class="header section-padding--side">
-      <a href="index.html" class="header__logo-box">
-        <img src="./img/Logo/logo-02.png" alt="" class="header__logo" />
-      </a>
-      <div class="header__nav">
-        <ul class="nav">
-          <li>
-            <a href="html/trailer.html" class="nav-btn mandarin-text">影片</a>
-          </li>
-          <li>
-            <a href="html/game.html" class="nav-btn mandarin-text">翻牌游戲</a>
-          </li>
-          <li>
-            <a href="html/demo.html" class="nav-btn mandarin-text">3D游戲</a>
-          </li>
-          <li>
-            <a href="html/gallery.html" class="nav-btn mandarin-text">圖庫</a>
-          </li>
-        </ul>
-      </div>
+    <header class="header">
+      <nav>
+        <a href="index.html" class="header__logo-box">
+          <img src="./img/Logo/logo-02.png" alt="" class="header__logo" />
+        </a>
+        <div class="header__nav">
+          <ul class="nav-links">
+            <li>
+              <a href="html/trailer.html" class="nav-btn mandarin-text">影片</a>
+            </li>
+            <li>
+              <a href="html/game.html" class="nav-btn mandarin-text"
+                >翻牌游戲</a
+              >
+            </li>
+            <li>
+              <a href="html/demo.html" class="nav-btn mandarin-text">3D游戲</a>
+            </li>
+            <li>
+              <a href="html/gallery.html" class="nav-btn mandarin-text">圖庫</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <main class="hero-page section-padding--full" id="hero-section">
+    <main class="hero-page" id="hero-section">
       <h1 class="hero-title mandarin-text" id="hero-title">
         探索馬來西亞美食地圖！
       </h1>
@@ -73,19 +77,10 @@
       </div>
     </main>
 
-    <section
-      class="section-padding--fatside about-us-section"
-      id="about-us-section"
-    >
-      <div class="flex">
-        <!-- <img
-          src="../img/About_Us/Title-min.png"
-          alt=""
-          style="width: 32rem"
-          class="about-us-title"
-        /> -->
-        <h1 class="about-us-title mandarin-text">關於我們</h1>
-      </div>
+    <hr />
+
+    <section class="about-us-section" id="about-us-section">
+      <h1 class="about-us-title mandarin-text">關於我們</h1>
       <div class="about-us-vision mandarin-text">
         <div class="about-us--flex">
           <div class="about-us--text flex-1-of-2">
@@ -110,8 +105,8 @@
             <iframe
               src="https://my.spline.design/kedahtry-9fa94f221a7175e1cdeb93e14a54b92c/"
               frameborder="0"
-              width="100%"
-              height="100%"
+              width="20%"
+              height="20%"
             ></iframe>
             <div class="empty-div z-index2"></div>
             <p class="z-index2">
@@ -124,23 +119,18 @@
         <div class="about-us--flex">
           <div class="about-us--text flex-2-of-3">
             <h2 class="special-thanks">特別鳴謝</h2>
-            <!-- <p>
-              &ensp;&ensp;在求學於製作畢業製作的期間，我們收到了來自老師們的熱情教誨以及各方親友們的熱情支援。<br /><br />&ensp;
-              特別是恩師A老師的習性指導，B老師以及C班導的協助還有來自馬來西亞親友們的相片支援，對此我們深深感到感激。
-            </p> -->
             <p>
               &ensp;&ensp;在這次畢業製作的過程中，我們有幸得到了來自各方的支持與協助，讓這個計畫得以順利完成。首先，我們要由衷感謝我們的畢業專題指導老師A老師，從構思到實作階段，老師不僅給予我們許多具體的建議，也在我們迷惘或陷入困境時給予鼓勵與方向，讓我們更加堅定地完成每一個挑戰。<br /><br />&ensp;&ensp;此外，我們也要感謝丙班的部分同學與蔡明軒同學，熱心協助我們進行馬來文美食名稱的錄音工作，讓語音導覽的呈現更為完整且生動。同時，感謝學校與所有任課老師在過去幾年中的教導與專業訓練，無論是設計技巧、程式操作還是專案管理能力，都是我們順利完成這項作品的重要基礎。<br /><br />
-              &ensp;&ensp;如果對這個作品或其中的技術與想法感到興趣，歡迎與我們聯絡或親自訪問我們，或許能從我們的經驗中找到更多想知道的答案。<br /><br />
+              &ensp;&ensp;如果對這個作品或其中的技術與想法感到興趣，歡迎與我們聯絡或親自訪問我們，或許能從我們的經驗中找到更多想知道的答案。
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section
-      class="section-padding--full member member-section"
-      id="member-section"
-    >
+    <hr />
+
+    <section class="member-section" id="member-section">
       <h1 class="member-title mandarin-text">組員介紹</h1>
       <div class="team-members">
         <!-- AAA -->
@@ -361,21 +351,12 @@
       </div>
     </section>
 
-    <section class="merch-section section-padding--side" id="merch-section">
+    <hr />
+
+    <section class="merch-section" id="merch-section">
       <h1 class="merch-title mandarin-text">周邊商品</h1>
       <div class="flex">
-        <div class="merch-area padding-full">
-          <div class="merch-card">
-            <figure>
-              <img
-                src="./img/Merch/Durian-Stuff-Toy/LINE_ALBUM_週邊商品圖_241222_21.jpg"
-                alt="Durian Stuff Toy"
-              />
-            </figure>
-            <div class="merch-body">
-              <h2 class="mandarin-text">榴蓮玩偶</h2>
-            </div>
-          </div>
+        <div class="merch-area">
           <div class="merch-card">
             <figure>
               <img
@@ -385,6 +366,17 @@
             </figure>
             <div class="merch-body">
               <h2 class="mandarin-text">糖果轉蛋機</h2>
+            </div>
+          </div>
+          <div class="merch-card">
+            <figure>
+              <img
+                src="./img/Merch/Durian-Stuff-Toy/LINE_ALBUM_週邊商品圖_241222_21.jpg"
+                alt="Durian Stuff Toy"
+              />
+            </figure>
+            <div class="merch-body">
+              <h2 class="mandarin-text">榴蓮玩偶</h2>
             </div>
           </div>
           <div class="merch-card">
@@ -402,57 +394,49 @@
       </div>
     </section>
 
-    <footer class="footer section-padding--side">
+    <hr />
+
+    <footer class="footer">
       <div class="logo-grp">
         <img
           src="./img/Logo/logo-02.png"
           alt="footer-logo"
           class="logo-image"
         />
-        <!-- <a href="/html/main.html" class="footer-btn">逛喫遊馬 TabeUma</a> -->
         <p class="copyright">
           Copyright &copy; 2024 by Ming Chuan University - Taoyuan Campus
         </p>
       </div>
-      <!-- <p class="appreciation-text mandarin-text">
-        在求學於製作畢業製作的期間，我們收到了來自老師們的熱情教誨以及各方親友們的熱情支援。特別是恩師A老師的習性指導，黃思彧老師以及C班導幫助還有來自馬來西亞親友們相片支援，對此我們深深感到感激。
-      </p> -->
     </footer>
 
-    <!-- Hidden -->
     <!-- Line-Pop-Up-Overlay -->
     <div class="pop-up hidden">
       <button class="close-pop-up">&times;</button>
       <h2><span class="mandarin-text">AAA</span>'s Line ID :</h2>
       <div class="font-small text-border">
         <button class="copy-btn font-small">COPY</button>
-        <span class="text-to-copy border-line">AAA's Line ID</span>
-        <p class="message" id="message" hidden>Copied to Clipboard!</p>
+        <span class="text-to-copy border-line">12345678</span>
+        <p hidden>Copied to Clipboard!</p>
       </div>
     </div>
-    <div class="overlay hidden"></div>
-
     <div class="pop-up hidden">
       <button class="close-pop-up">&times;</button>
       <h2><span class="mandarin-text">BBB</span>'s Line ID :</h2>
       <div class="font-small text-border">
         <button class="copy-btn font-small">COPY</button>
-        <span class="text-to-copy border-line">BBB's Line ID</span>
-        <p class="message" id="message" hidden>Copied to Clipboard!</p>
+        <span class="text-to-copy border-line">23456789</span>
+        <p hidden>Copied to Clipboard!</p>
       </div>
     </div>
-    <div class="overlay hidden"></div>
-
     <div class="pop-up hidden">
       <button class="close-pop-up">&times;</button>
       <h2><span class="mandarin-text">CCC</span>'s Line ID</h2>
       <div class="font-small text-border">
         <button class="copy-btn font-small">COPY</button>
-        <span class="text-to-copy border-line">CCC's Line ID</span>
-        <p class="message" id="message" hidden>Copied to Clipboard!</p>
+        <span class="text-to-copy border-line">34567890</span>
+        <p hidden>Copied to Clipboard!</p>
       </div>
     </div>
-    <div class="overlay hidden"></div>
     <!-- Line-Pop-Up-Overlay -->
 
     <!-- Portfolio-Overlay -->
@@ -477,8 +461,6 @@
         <div class="swiper-scrollbar"></div>
       </div>
     </div>
-    <div class="gOverlay hidden"></div>
-
     <!-- BBB's Portfolio -->
     <div class="gallery hidden">
       <button class="gallery-close-btn">&times;</button>
@@ -509,8 +491,6 @@
         <div class="swiper-scrollbar"></div>
       </div>
     </div>
-    <div class="gOverlay hidden"></div>
-
     <!-- CCC's Portfolio -->
     <div class="gallery hidden">
       <button class="gallery-close-btn">&times;</button>
@@ -519,6 +499,9 @@
           <div class="swiper-slide">
             <img src="./img/Portfolio/CCC/1.jpg" alt="" />
           </div>
+          <div class="swiper-slide">
+            <img src="./img/Portfolio/CCC/" alt="" />
+          </div>
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -526,7 +509,7 @@
         <div class="swiper-scrollbar"></div>
       </div>
     </div>
-    <div class="gOverlay hidden"></div>
+    <div class="overlay hidden"></div>
     <!-- Portfolio-Overlay -->
 
     <!-- Go to Top Button -->

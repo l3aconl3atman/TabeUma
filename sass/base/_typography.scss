@@ -1,47 +1,6 @@
-// Spline font
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 300 to 700
-
-.spline-sans-font {
-  font-family: "Spline Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
 @font-face {
   font-family: "BaksoSapi";
   src: url("/Fonts/BaksoSapi.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "JasonHandwriting1";
-  src: url("/Fonts/JasonHandwriting1.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "JasonHandwriting2";
-  src: url("/Fonts/JasonHandwriting2.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "JasonHandwriting3";
-  src: url("/Fonts/JasonHandwriting3.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "JasonHandwriting3p";
-  src: url("/Fonts/JasonHandwriting3p.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Retro";
-  src: url("/Fonts/Retro.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Poster";
-  src: url("/Fonts/poster.ttf") format("truetype");
 }
 
 @font-face {
@@ -49,25 +8,10 @@
   src: url("/Fonts/POP.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "Round";
-  src: url("/Fonts/Round.otf") format("opentype");
-}
-
-@font-face {
-  font-family: "Noto";
-  src: url("/Fonts/NotoSansTC-VariableFont_wght.ttf") format("truetype");
-}
-
 .mandarin-text {
   font-family: "POP", sans-serif;
-  /* unicode-range: U+4E00-9FFF; */
 }
 
 body {
   font-family: "BaksoSapi", sans-serif;
-}
-
-.gallery-font {
-  font-family: "Noto", sans-serif;
 }

@@ -1,16 +1,16 @@
 @use "../abstracts";
 
 .hero-page {
-  background: abstracts.$hero--background;
   max-height: 90vh;
+  padding: 0 2rem;
 
   .hero-title {
-    margin-bottom: abstracts.$margin-bottom;
     font-size: abstracts.$title-large;
+    padding: 1rem 4rem 2rem 4rem;
   }
 }
 
-// .hero-container {
-//   .information-btn {
-//   }
-// }
+.hero-container {
+  // border: solid 1px black;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.15);
+}

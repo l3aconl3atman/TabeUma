@@ -47,64 +47,20 @@ h3 {
   overflow: hidden;
 }
 
-.spline-sans-font {
-  font-family: "Spline Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
-
 @font-face {
   font-family: "BaksoSapi";
   src: url("/Fonts/BaksoSapi.otf") format("opentype");
 }
 @font-face {
-  font-family: "JasonHandwriting1";
-  src: url("/Fonts/JasonHandwriting1.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JasonHandwriting2";
-  src: url("/Fonts/JasonHandwriting2.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JasonHandwriting3";
-  src: url("/Fonts/JasonHandwriting3.ttf") format("truetype");
-}
-@font-face {
-  font-family: "JasonHandwriting3p";
-  src: url("/Fonts/JasonHandwriting3p.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Retro";
-  src: url("/Fonts/Retro.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Poster";
-  src: url("/Fonts/poster.ttf") format("truetype");
-}
-@font-face {
   font-family: "POP";
   src: url("/Fonts/POP.ttf") format("truetype");
 }
-@font-face {
-  font-family: "Round";
-  src: url("/Fonts/Round.otf") format("opentype");
-}
-@font-face {
-  font-family: "Noto";
-  src: url("/Fonts/NotoSansTC-VariableFont_wght.ttf") format("truetype");
-}
 .mandarin-text {
   font-family: "POP", sans-serif;
-  /* unicode-range: U+4E00-9FFF; */
 }
 
 body {
   font-family: "BaksoSapi", sans-serif;
-}
-
-.gallery-font {
-  font-family: "Noto", sans-serif;
 }
 
 .hidden {
@@ -115,12 +71,16 @@ body {
   padding: 2rem 4rem;
 }
 
-.section-padding--fatside {
-  padding: 0 11.5rem;
+.section-padding--noTop {
+  padding: 0.5rem 4rem 5rem 4rem;
 }
 
 .section-padding--side {
   padding: 0 2rem;
+}
+
+.section-padding--fatside {
+  padding: 0 11.5rem;
 }
 
 .margin-bottom {
@@ -164,13 +124,7 @@ body {
   transition: all 0.5s ease;
 }
 .nav-btn:hover {
-  letter-spacing: 0.2rem;
-  color: #0a2225;
-}
-
-.text-border {
-  margin: 0;
-  padding: 0;
+  color: white;
 }
 
 .copy-btn {
@@ -286,7 +240,7 @@ h3 {
 }
 
 .font-small {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
 }
 
 .font-medium {
@@ -312,16 +266,15 @@ img {
 }
 
 .about-us-section {
-  background: linear-gradient(to bottom, #8ae3fc 85%, #efb89d 100%);
+  padding: 0 2rem;
 }
 .about-us-section p {
   font-size: 1.5rem;
-  line-height: 2.75rem;
+  line-height: 2rem;
 }
 .about-us-section .about-us-title {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   font-size: 4rem;
+  padding: 2rem 4rem;
 }
 
 [class^=about-us--flex]:not(:last-child) {
@@ -363,9 +316,6 @@ img {
   align-items: center;
   gap: 680px;
 }
-.wrapper .z-index3 {
-  z-index: 3;
-}
 .wrapper .z-index2 {
   z-index: 2;
 }
@@ -375,7 +325,7 @@ img {
 .wrapper iframe {
   position: absolute;
   transform: translate(-30%);
-  width: 1000px;
+  width: 780px;
   height: 1000px;
   border-radius: 30rem;
 }
@@ -467,31 +417,50 @@ img {
 }
 
 .header {
-  height: 10vh;
-  max-width: 100vw;
+  height: 80px;
+}
+.header nav {
   display: flex;
   justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  padding: 0 2rem;
   align-items: center;
-  background: linear-gradient(to bottom, #fbf4cb 80%, #fffdf6 100%);
+  transition: transform 0.5s ease-out;
+  transform: traslateY(-100%);
 }
-.header__logo-box {
+.header nav .header__logo-box {
   width: 16rem;
 }
-
-.nav {
+.header nav.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: saturate(180%) blur(20px);
+  z-index: 9999;
+  transform: translateY(0);
+}
+.header nav .nav-links {
   font-size: 2.25rem;
   width: 30rem;
   display: flex;
   justify-content: space-between;
+  list-style: none;
 }
 
 .hero-page {
-  background: linear-gradient(to bottom, #fffdf6 90%, #8ae3fc 100%);
   max-height: 90vh;
+  padding: 0 2rem;
 }
 .hero-page .hero-title {
-  margin-bottom: 2rem;
   font-size: 4rem;
+  padding: 1rem 4rem 2rem 4rem;
+}
+
+.hero-container {
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-page {
@@ -557,22 +526,22 @@ img {
 }
 
 .member-section {
-  background: linear-gradient(to bottom, #efb89d 85%, #dc937d 100%);
   flex-direction: column;
   align-items: center;
   display: flex;
+  padding: 0 2rem;
 }
 .member-section .member-title {
-  margin-bottom: -4rem;
   font-size: 4rem;
+  padding: 2rem 4rem;
 }
 .member-section .team-members {
   min-width: 80rem;
   max-width: 78rem;
   display: flex;
   justify-content: space-between;
-  gap: 6rem;
-  margin: 6rem auto;
+  gap: 3rem;
+  flex-wrap: wrap;
 }
 .member-section .team-members .member-card {
   position: relative;
@@ -706,13 +675,14 @@ img {
 }
 
 .merch-section {
-  background: linear-gradient(to bottom, #dc937d 85%, #7e6a97 100%);
+  padding: 0 2rem;
 }
 .merch-section .merch-title {
   font-size: 4rem;
+  padding: 2rem 4rem;
 }
 .merch-section .merch-area {
-  max-width: 100rem;
+  max-width: 160rem;
   gap: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -891,7 +861,7 @@ img {
   height: 100vh;
   overflow: hidden;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10;
 }
 
 .parallax-img {
@@ -900,9 +870,10 @@ img {
   transform: translateY(-50%);
   will-change: transform;
   backface-visibility: hidden;
-  width: 200px; /* 缩小宽度 */
+  width: 200px;
   height: auto;
-  opacity: 0.5; /* 半透明，可按需删 */
+  opacity: 0.25;
+  z-index: 10;
 }
 
 .parallax-img.left {
@@ -913,14 +884,6 @@ img {
   right: 10px;
 }
 
-/* —— 全局底层渐变背景 —— */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: none !important;
-}
-
 html::before {
   content: "";
   position: fixed;
@@ -929,7 +892,7 @@ html::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: linear-gradient(135deg, #fbe0aa, #92e1f0, #a3eea3);
+  background: linear-gradient(135deg, #fbf4cb, #bdedfa, #8ae3fc, #aaced5, #efb89d, #dc927d, #7e6a97, #403675);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
 }
@@ -945,8 +908,6 @@ html::before {
     background-position: 0% 50%;
   }
 }
-/* —— 强制内容容器透明 —— */
-header,
 main,
 section,
 footer,
@@ -955,9 +916,7 @@ footer,
 .about-us-section,
 .member-section,
 .merch-section,
-.footer,
-.section-padding--full,
-.section-padding--side {
+.footer {
   background: transparent !important;
 }
 
@@ -985,6 +944,7 @@ footer,
 .go-to-top.show {
   opacity: 1;
   visibility: visible;
+  z-index: 100;
 }
 
 /*# sourceMappingURL=style.css.map */

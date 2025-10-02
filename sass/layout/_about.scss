@@ -1,17 +1,16 @@
 @use "../abstracts";
 
 .about-us-section {
-  background: abstracts.$about-us--background;
+  padding: 0 2rem;
 
   p {
     font-size: abstracts.$font-smedium;
-    line-height: 2.75rem;
+    line-height: 2rem;
   }
 
   .about-us-title {
-    margin-top: abstracts.$margin-bottom;
-    margin-bottom: abstracts.$margin-bottom;
     font-size: abstracts.$title-large;
+    padding: 2rem 4rem;
   }
 }
 
@@ -73,10 +72,6 @@
   align-items: center;
   gap: 680px;
 
-  .z-index3 {
-    z-index: 3;
-  }
-
   .z-index2 {
     z-index: 2;
   }
@@ -88,7 +83,7 @@
   iframe {
     position: absolute;
     transform: translate(-30%);
-    width: 1000px;
+    width: 780px;
     height: 1000px;
     border-radius: 30rem;
     // border: 1px dashed black;

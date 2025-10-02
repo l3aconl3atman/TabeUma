@@ -1,153 +1,68 @@
 "use strict";
-// Variables
-// Flickity
-const elem = document.querySelector(".gallery-carousel");
-
+// ****************************** VARIABLES ****************************** //
 // Overlay
-const overlay = document.querySelectorAll(".overlay");
-const galleryBack = document.querySelectorAll(".gOverlay");
-// Overlay
+const overlay = document.querySelector(".overlay");
 
+// Sections
+const header = document.querySelector("header");
+const nav = document.querySelector("nav");
+const heroSection = document.querySelector("#hero-section");
+const aboutUsSection = document.querySelector("#about-us-section");
+
+// Pop Up Gallery
 const popUp = document.querySelectorAll(".pop-up");
 const closePopUp = document.querySelectorAll(".close-pop-up");
 const openPopUp = document.querySelectorAll(".open-pop-up");
 const openGallery = document.querySelectorAll(".open-gallery");
 const galleryOverlay = document.querySelectorAll(".gallery");
-const swiperOverlay = document.querySelector(".swiper");
 const hideGallery = document.querySelectorAll(".gallery-close-btn");
-const mainCarousel = document.querySelectorAll("main-carousel");
-const prevBtn = document.querySelector(".prev-btn");
-const nextBtn = document.querySelector(".next-btn");
-// const canvas = document.getElementById("canvas");
-// const ctx = canvas.getContext("2d");
 
 // Copy Function Variables
 const copyBtn = document.querySelectorAll(".copy-btn");
 const textToCopy = document.querySelectorAll(".text-to-copy");
 const message = document.getElementById("message");
 // Copy Function Variables
+// ****************************** VARIABLES ****************************** //
 
-let currentCarouselItem = 0;
-
-// Scrollable Div
-const scrollableDiv = document.querySelector(".scrollable-div");
-// Scrollable Div
-
-// Variables
-
-// Line Pop Up
+// ****************************** LINE POP UP ****************************** //
 const showPopUp = function (i) {
   popUp[i].classList.remove("hidden");
-  overlay[i].classList.remove("hidden");
+  overlay.classList.remove("hidden");
   document.body.classList.add("disable-scroll");
 };
 
 const hidePopUp = function (i) {
   popUp[i].classList.add("hidden");
-  overlay[i].classList.add("hidden");
+  overlay.classList.add("hidden");
   document.body.classList.remove("disable-scroll");
 };
 
 for (let i = 0; i < openPopUp.length; i++) {
-  // openPopUp[i].addEventListener("click", showPopUp(i));
-
-  // closePopUp[i].addEventListener("click", hidePopUp(i));
-
-  // overlay[i].addEventListener("click", hidePopUp(i));
-  openPopUp[i].addEventListener("click", function () {
-    showPopUp(i);
-  });
-
-  closePopUp[i].addEventListener("click", function () {
-    hidePopUp(i);
-  });
-
-  overlay[i].addEventListener("click", function () {
-    hidePopUp(i);
-  });
+  openPopUp[i].addEventListener("click", () => showPopUp(i));
+  closePopUp[i].addEventListener("click", () => hidePopUp(i));
+  overlay.addEventListener("click", () => hidePopUp(i));
 }
-// Line Pop Up
+// ****************************** LINE POP UP ****************************** //
 
-// overlay.addEventListener("click", function () {
-//   hidePopUp;
-// });
-
-// Gallery PopUp
-// const showGallery = function (i) {
-//   galleryOverlay[i].classList.remove("hidden");
-//   galleryBack[i].classList.remove("hidden");
-//   console.log("Something has been clicked!");
-//   document.body.classList.add("disable-scroll");
-// };
-
-// const closeGallery = function (i) {
-//   galleryOverlay[i].classList.add("hidden");
-//   galleryBack[i].classList.add("hidden");
-//   document.body.classList.remove("disable-scroll");
-// };
-
-// for (let i = 0; i < openGallery.length; i++) {
-//   openGallery[i].addEventListener("click", function () {
-//     showGallery(i);
-//   });
-
-//   hideGallery[i].addEventListener("click", function () {
-//     closeGallery(i);
-//   });
-
-//   galleryBack[i].addEventListener("click", function () {
-//     closeGallery(i);
-//   });
-// }
-
-// ******************************SWIPER JS****************************** //
+// ****************************** GALLERY ****************************** //
 const showGallery = function (i) {
   galleryOverlay[i].classList.remove("hidden");
-  galleryBack[i].classList.remove("hidden");
-  console.log("Something has been clicked!");
+  overlay.classList.remove("hidden");
   document.body.classList.add("disable-scroll");
 };
 
 const closeGallery = function (i) {
   galleryOverlay[i].classList.add("hidden");
-  galleryBack[i].classList.add("hidden");
+  overlay.classList.add("hidden");
   document.body.classList.remove("disable-scroll");
 };
 
 for (let i = 0; i < openGallery.length; i++) {
-  openGallery[i].addEventListener("click", function () {
-    showGallery(i);
-  });
-
-  hideGallery[i].addEventListener("click", function () {
-    closeGallery(i);
-  });
-
-  galleryBack[i].addEventListener("click", function () {
-    closeGallery(i);
-  });
+  openGallery[i].addEventListener("click", () => showGallery(i));
+  hideGallery[i].addEventListener("click", () => closeGallery(i));
+  overlay.addEventListener("click", () => closeGallery(i));
 }
-
-// ******************************SWIPER JS****************************** //
-
-if (document.body) {
-  console.log("The page has loaded up!");
-}
-console.log("JavaScript is working!");
-
-// Body Scroll
-// Function to disable body scrolling
-const disableBodyScroll = () => {
-  document.body.style.overflow = "hidden";
-};
-
-// Function to enable body scrolling
-const enableBodyScroll = () => {
-  document.body.style.overflow = "auto";
-};
-
-scrollableDiv.addEventListener("mouseenter", disableBodyScroll);
-scrollableDiv.addEventListener("mouseleave", enableBodyScroll);
+// ****************************** GALLERY ****************************** //
 
 // Copy Function Event Listener
 for (let i = 0; copyBtn.length > i; i++) {
@@ -197,16 +112,29 @@ function updateParallax() {
 const goToTopBtn = document.querySelector(".go-to-top");
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 300) {
+  if (window.scrollY > 500) {
     goToTopBtn.classList.add("show");
   } else {
     goToTopBtn.classList.remove("show");
   }
 });
 
-goToTopBtn.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+// ****************************** STICKY NAVIGATION ****************************** //
+
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  console.log(entry);
+  if (!entry.isIntersecting) nav.classList.add("sticky");
+  else nav.classList.remove("sticky");
+};
+
+const heroObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: "-80px",
 });
+
+heroObserver.observe(heroSection);
+// ****************************** STICKY NAVIGATION ****************************** //

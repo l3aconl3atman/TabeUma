@@ -1,22 +1,40 @@
 @use "../abstracts";
 
 .header {
-  height: 10vh;
-  max-width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: abstracts.$header--background;
+  height: 80px;
 
-  &__logo-box {
-    width: 16rem;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    padding: 0 2rem;
+    align-items: center;
+    transition: transform 0.5s ease-out;
+    transform: traslateY(-100%);
+
+    .header__logo-box {
+      width: 16rem;
+    }
+
+    &.sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: saturate(180%) blur(20px);
+      z-index: 9999;
+      transform: translateY(0);
+    }
+
+    .nav-links {
+      font-size: abstracts.$font-large;
+      width: 30rem;
+      display: flex;
+      // gap: 2rem;
+      justify-content: space-between;
+      list-style: none;
+    }
   }
-}
-
-.nav {
-  font-size: abstracts.$font-large;
-  width: 30rem;
-  display: flex;
-  // gap: 2rem;
-  justify-content: space-between;
 }

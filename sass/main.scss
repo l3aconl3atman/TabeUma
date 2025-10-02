@@ -26,8 +26,6 @@
 @import "./layout/trailer";
 @import "./libraries/swiper";
 
-@import "./pages/home";
-
 /* parallax 视差基础样式 */
 /* main.scss 末尾 */
 .parallax-container {
@@ -38,7 +36,7 @@
   height: 100vh;
   overflow: hidden;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10;
 }
 
 .parallax-img {
@@ -47,9 +45,10 @@
   transform: translateY(-50%);
   will-change: transform;
   backface-visibility: hidden;
-  width: 200px; /* 缩小宽度 */
+  width: 200px;
   height: auto;
-  opacity: 0.5; /* 半透明，可按需删 */
+  opacity: 0.25;
+  z-index: 10;
 }
 
 .parallax-img.left {
@@ -59,13 +58,10 @@
   right: 10px;
 }
 
-/* —— 全局底层渐变背景 —— */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: none !important; // 清除任何现有背景
-}
+// html,
+// body {
+//   background: none !important; // 清除任何现有背景
+// }
 
 html::before {
   content: "";
@@ -75,7 +71,19 @@ html::before {
   width: 100%;
   height: 100%;
   z-index: -1; // 放到最底层
-  background: linear-gradient(135deg, #fbe0aa, #92e1f0, #a3eea3);
+  // background: linear-gradient(135deg, #fbe0aa, #92e1f0, #a3eea3);
+  background: linear-gradient(
+    135deg,
+    #fbf4cb,
+    #bdedfa,
+    #8ae3fc,
+    #aaced5,
+    #efb89d,
+    #dc927d,
+    #7e6a97,
+    #403675
+  );
+
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
 }
@@ -92,8 +100,6 @@ html::before {
   }
 }
 
-/* —— 强制内容容器透明 —— */
-header,
 main,
 section,
 footer,
@@ -102,9 +108,7 @@ footer,
 .about-us-section,
 .member-section,
 .merch-section,
-.footer,
-.section-padding--full,
-.section-padding--side {
+.footer {
   background: transparent !important;
 }
 
@@ -134,5 +138,6 @@ footer,
   &.show {
     opacity: 1;
     visibility: visible;
+    z-index: 100;
   }
 }
