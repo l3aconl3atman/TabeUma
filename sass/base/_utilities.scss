@@ -4,28 +4,11 @@
   display: none;
 }
 
-.section-padding--full {
-  padding: 2rem 4rem;
-}
-
-.section-padding--noTop {
-  padding: 0.5rem 4rem 5rem 4rem;
-}
-
-.section-padding--side {
-  padding: 0 2rem;
-}
-
-.section-padding--fatside {
-  padding: 0 11.5rem;
-}
-
 .margin-bottom {
   margin-bottom: abstracts.$margin-bottom;
 }
 
-.overlay,
-.gOverlay {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,7 +16,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px);
-  z-index: 2;
+  z-index: 100;
 }
 
 .disable-scroll {

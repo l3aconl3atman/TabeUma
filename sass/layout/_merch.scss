@@ -1,14 +1,14 @@
 @use "../abstracts";
 
-.merch-section {
-  padding: 0 2rem;
+#merch-section {
+  // padding: 4rem 2rem 0 2rem;
 
   .merch-title {
     font-size: abstracts.$title-large;
     padding: 2rem 4rem;
   }
   .merch-area {
-    max-width: 160rem;
+    width: 160rem;
     gap: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

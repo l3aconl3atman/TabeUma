@@ -1,25 +1,21 @@
 @use "../abstracts";
 
-.demo-body {
-  overflow: hidden;
+.demo-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 
-  .demo-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+  .demo-title {
+    margin-bottom: abstracts.$margin-bottom;
+    font-size: abstracts.$title-large;
+  }
 
-    .demo-title {
-      margin-bottom: abstracts.$margin-bottom;
-      font-size: abstracts.$title-large;
-    }
-
-    .demo-container {
-      height: 75vh;
-      width: 80vw;
-      border-radius: 1rem;
-      overflow: hidden;
-    }
+  .demo-container {
+    height: 75vh;
+    width: 80vw;
+    border-radius: 1rem;
+    overflow: hidden;
   }
 }

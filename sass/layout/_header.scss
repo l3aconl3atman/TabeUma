@@ -14,7 +14,7 @@
     transform: traslateY(-100%);
 
     .header__logo-box {
-      width: 16rem;
+      width: 14rem;
     }
 
     &.sticky {
@@ -24,7 +24,7 @@
       width: 100%;
       background: rgba(255, 255, 255, 0.5);
       backdrop-filter: saturate(180%) blur(20px);
-      z-index: 9999;
+      z-index: 8;
       transform: translateY(0);
     }
 

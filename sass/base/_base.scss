@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 *,
 *::after,
 *::before {
@@ -11,39 +13,146 @@ html {
 }
 
 body {
+  width: 100vw;
+  height: 100%;
   box-sizing: border-box;
   margin: 0;
-  background-color: #fffdf6;
-  color: #000;
   position: relative;
-  // overflow: auto;
   overflow: hidden;
   overflow-y: scroll;
 }
 
 h1 {
+  font-size: abstracts.$title-large;
   text-align: center;
+  margin: 1rem 4rem 2rem 4rem;
 }
 
 h2 {
+  font-size: abstracts.$title-medium;
   text-align: center;
-  margin-bottom: variables.$margin-bottom;
 }
 
 h3 {
+  font-size: abstracts.$title-small;
   text-align: center;
-  margin-bottom: variables.$margin-bottom;
 }
 
-.hero-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.section {
+  transition: transform 1s, opacity 1s;
+}
 
-  .hero-container {
-    height: 80vh;
-    width: 80vw;
-    border-radius: 1rem;
-    overflow: hidden;
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+// Parallax container
+.parallax-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.parallax-img {
+  position: absolute;
+  top: 15%;
+  transform: translateY(-50%);
+  will-change: transform;
+  backface-visibility: hidden;
+  width: 200px;
+  height: auto;
+  opacity: 0.25;
+  z-index: 10;
+}
+
+.parallax-img.left {
+  left: 10px;
+}
+.parallax-img.right {
+  right: 10px;
+}
+
+html::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  // background: linear-gradient(135deg, #fbe0aa, #92e1f0, #a3eea3);
+  background: linear-gradient(
+    135deg,
+    #fbf4cb,
+    #bdedfa,
+    #8ae3fc,
+    #aaced5,
+    #efb89d,
+    #dc927d,
+    #7e6a97,
+    #403675
+  );
+
+  background-size: 400% 400%;
+  animation: gradientShift 30s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+main,
+section,
+footer,
+.nav,
+#hero-page,
+#about-us-section,
+#member-section,
+#merch-section,
+.footer {
+  background: transparent !important;
+}
+
+.go-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 99;
+  background-color: #8ae4fc;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  font-family: "BaksoSapi", sans-serif;
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    background-color: #6eb6ca;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    z-index: 98;
   }
 }

@@ -13,12 +13,11 @@
   border-radius: 1rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   text-align: center;
-  z-index: 3;
+  z-index: 101;
 }
 
 .close-pop-up,
 .gallery-close-btn {
-  color: abstracts.$color--dark-grey;
   position: absolute;
   top: 1rem;
   right: 1rem;

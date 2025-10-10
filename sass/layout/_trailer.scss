@@ -2,20 +2,16 @@
 
 .trailer-page {
   width: 100vw;
-  height: 80vh;
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
 
-  .trailer-title {
-    font-size: abstracts.$title-large;
-  }
-
   .vid-container {
     border-radius: 2rem;
     overflow: hidden;
-    margin: 0 auto;
+    padding: 2rem 4rem;
   }
 }

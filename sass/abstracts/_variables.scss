@@ -4,46 +4,6 @@ $color-spline--pink: #ff3af3;
 $color-spline--cyan: #3afcc6;
 $color-spline--blue: #4480ff;
 
-// Scene Sky Color
-$color--grey: #d1d1d13b;
-$color--dawn: #fbf4cb;
-$color--morning: #bdedfa;
-$color--noon: #8ae3fc;
-$color--afternoon: #aaced5;
-$color--sunset: #efb89d;
-$color--dusk: #dc937d;
-$color--night: #7e6a97;
-$color--midnight: #403675;
-$color--dark-grey: #333;
-
-// WebPage Colours
-$header--background: linear-gradient(to bottom, $color--dawn 80%, #fffdf6 100%);
-$hero--background: linear-gradient(to bottom, #fffdf6 90%, $color--noon 100%);
-$about-us--background: linear-gradient(
-  to bottom,
-  $color--noon 85%,
-  $color--sunset 100%
-);
-$member--background: linear-gradient(
-  to bottom,
-  $color--sunset 85%,
-  $color--dusk 100%
-);
-$merch--background: linear-gradient(
-  to bottom,
-  $color--dusk 85%,
-  $color--night 100%
-);
-$footer--background: linear-gradient(
-  to bottom,
-  $color--night 85%,
-  $color--midnight 100%
-);
-
-// $color-background: #fffdf6;
-$color-black: #000;
-$color-red: #f00;
-
 // FONT-SIZE
 $title-xlarge: 6rem;
 $title-large: 4rem;
@@ -67,8 +27,5 @@ $gutter-horizontal: 3.75rem;
 $margin-middle: 0 4rem;
 $margin-bottom: 2rem;
 
-// PADDING
-$padding--card: 1rem 4rem;
-
 // SHADOW
-$shadow-light: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+$shadow-light: rgba(0, 0, 0, 0.2) 0px 0px 20px 10px;

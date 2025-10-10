@@ -18,7 +18,7 @@ function initializeGame() {
   matchedPairs = 0;
   score = 0;
   seconds = 0;
-  canFlip = false; // Disable flipping initially
+  canFlip = false;
   document.getElementById("score").textContent = "0";
   document.getElementById("timer").textContent = "0:00";
   document.getElementById("winMessage").style.display = "none";

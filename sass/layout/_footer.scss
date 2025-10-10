@@ -1,18 +1,13 @@
 @use "../abstracts";
 
 .footer {
-  background: abstracts.$footer--background;
-  height: 20rem;
-  // display: grid;
-  // grid-template-columns: repeat(10, 1fr);
-  // position: relative;
+  height: 18rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   .logo-grp {
     margin: auto 0;
-    // width: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

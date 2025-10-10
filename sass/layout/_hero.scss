@@ -1,16 +1,21 @@
 @use "../abstracts";
 
-.hero-page {
+.hero {
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-height: 90vh;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem 2rem;
 
-  .hero-title {
-    font-size: abstracts.$title-large;
-    padding: 1rem 4rem 2rem 4rem;
+  .hero-container {
+    height: 80vh;
+    width: 80vw;
+    border-radius: 5rem;
+    overflow: hidden;
   }
 }
 
 .hero-container {
-  // border: solid 1px black;
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: abstracts.$shadow-light;
 }

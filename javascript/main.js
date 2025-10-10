@@ -22,6 +22,7 @@ const copyBtn = document.querySelectorAll(".copy-btn");
 const textToCopy = document.querySelectorAll(".text-to-copy");
 const message = document.getElementById("message");
 // Copy Function Variables
+
 // ****************************** VARIABLES ****************************** //
 
 // ****************************** LINE POP UP ****************************** //
@@ -119,9 +120,11 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// ****************************** STICKY NAVIGATION ****************************** //
+goToTopBtn.addEventListener("click", function () {
+  header.scrollIntoView({ behavior: "smooth" });
+});
 
-const navHeight = nav.getBoundingClientRect().height;
+// ****************************** STICKY NAVIGATION ****************************** //
 
 const stickyNav = function (entries) {
   const [entry] = entries;
@@ -137,4 +140,29 @@ const heroObserver = new IntersectionObserver(stickyNav, {
 });
 
 heroObserver.observe(heroSection);
+
 // ****************************** STICKY NAVIGATION ****************************** //
+
+// ****************************** Revealing Element on Scroll ****************************** //
+// const allSections = document.querySelectorAll(".section");
+
+// const revealSection = function (entries, observer) {
+//   const [entry] = entries;
+
+//   if (!entry.isIntersecting) return;
+
+//   if (entry.isIntersecting) entry.target.classList.remove("section--hidden");
+
+//   observer.unobserve(entry.target);
+// };
+
+// const sectionObserver = new IntersectionObserver(revealSection, {
+//   root: null,
+//   threshold: 0.2,
+// });
+
+// allSections.forEach(function (section) {
+//   sectionObserver.observer(section);
+//   section.classList.add("section--hidden");
+// });
+// ****************************** Revealing Element on Scroll ****************************** //

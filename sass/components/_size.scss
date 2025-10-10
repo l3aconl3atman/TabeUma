@@ -1,19 +1,6 @@
 @use "../abstracts";
 
-h1 {
-  font-size: abstracts.$title-large;
-}
-
-h2 {
-  font-size: abstracts.$title-medium;
-}
-
-h3 {
-  font-size: abstracts.$title-small;
-}
-
 .mandarin-text {
-  font-size: abstracts.$font-mandarin;
   line-height: 3rem;
   letter-spacing: 0.25rem;
 }
@@ -24,25 +11,6 @@ h3 {
 
 .font-medium {
   font-size: abstracts.$font-large;
-}
-
-.tools-section {
-  .spline-title {
-    font-size: abstracts.$title-xlarge;
-    display: inline-block;
-    margin: 0;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-image: linear-gradient(
-      112.5deg,
-      abstracts.$color-spline--orange 10%,
-      abstracts.$color-spline--pink 15%,
-      abstracts.$color-spline--cyan 25%,
-      abstracts.$color-spline--blue 40%,
-      abstracts.$color-spline--pink 100%
-    );
-    color: transparent;
-  }
 }
 
 .small-text {

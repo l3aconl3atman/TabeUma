@@ -1,7 +1,7 @@
 @use "../abstracts";
 
-.about-us-section {
-  padding: 0 2rem;
+#about-us-section {
+  padding: 4rem 2rem;
 
   p {
     font-size: abstracts.$font-smedium;
@@ -38,7 +38,7 @@
   .about-us--img {
     max-width: 100%;
     .img {
-      width: 124%;
+      width: 130%;
       transform: translate(-10%);
     }
 
