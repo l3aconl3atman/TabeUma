@@ -1,15 +1,13 @@
 @use "../abstracts";
 
 #member-section {
+  .member-title {
+    padding: 2rem 4rem;
+  }
   flex-direction: column;
   align-items: center;
   display: flex;
   padding: 0 2rem;
-
-  .member-title {
-    font-size: abstracts.$title-large;
-    padding: 2rem 4rem;
-  }
 
   .team-members {
     min-width: 80rem;
@@ -18,7 +16,6 @@
     justify-content: space-between;
     gap: 3rem;
     flex-wrap: wrap;
-    // flex-basis: 1 1 1;
 
     .member-card {
       position: relative;
@@ -34,7 +31,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        transition: transform 0.8s;
+        transition: transform 0.5s;
         transform-style: preserve-3d;
 
         .card-front {
@@ -57,12 +54,12 @@
           position: absolute;
           width: 100%;
           height: 100%;
-          backface-visibility: hidden;
           border-radius: 15px;
           box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-          background: rgba(255, 255, 255, 0.95);
+          // background: rgba(255, 255, 255, 0.95);
           background: none;
           background-size: contain;
+          backface-visibility: hidden;
         }
 
         .card-back {
@@ -88,8 +85,8 @@
             transform: translate(-50%, -50%);
             background: url(../../img/Logo/logo-02.png) no-repeat center /
               contain;
-            filter: grayscale(0.8);
-            z-index: -1;
+            // filter: grayscale(0.8);
+            z-index: 0;
           }
         }
       }
@@ -148,7 +145,7 @@
 
 .view-works-btn {
   padding: 1rem 2rem;
-  background-color: #8ae4fc;
+  background-color: ber#8ae4fc;
   color: white;
   border: none;
   border-radius: 5px;

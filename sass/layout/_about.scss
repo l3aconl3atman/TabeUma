@@ -12,10 +12,15 @@
     font-size: abstracts.$title-large;
     padding: 2rem 4rem;
   }
-}
 
-// .about-us-title {
-// }
+  .about-us-vision {
+    margin: 0 4rem;
+
+    h2 {
+      padding: 4rem 0;
+    }
+  }
+}
 
 [class^="about-us--flex"] {
   &:not(:last-child) {
@@ -86,6 +91,5 @@
     width: 780px;
     height: 1000px;
     border-radius: 30rem;
-    // border: 1px dashed black;
   }
 }

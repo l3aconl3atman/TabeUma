@@ -1,141 +1,68 @@
 @use "../abstracts";
 
 #merch-section {
-  // padding: 4rem 2rem 0 2rem;
+  padding: 2rem 4rem;
 
   .merch-title {
-    font-size: abstracts.$title-large;
     padding: 2rem 4rem;
-  }
-  .merch-area {
-    width: 160rem;
-    gap: 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .flex {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-  }
 
-  .merch-card {
-    --title-color: black;
-    // --img-scale: 1.001;
-    --link-icon-opacity: 0;
-    // --card-color: rgba(0, 0, 0, 0.1);
-    background: var(--card-color);
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: all ease-in-out 0.4s;
-    transform-origin: center;
-  }
+    .merch-area {
+      width: 160rem;
+      gap: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
 
-  figure {
-    margin: 0;
-    padding: 0;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-
-    img {
-      max-width: 100%;
-      transform: scale(var(--image-scale));
-      transform-origin: center;
-      transition: all ease-in-out 0.4s;
-    }
-
-    /* img:hover {
+      .merch-card {
+        --title-color: black;
+        // --img-scale: 1.001;
+        --link-icon-opacity: 0;
+        // --card-color: rgba(0, 0, 0, 0.1);
+        background: var(--card-color);
+        border-radius: 1rem;
+        overflow: hidden;
         transition: all ease-in-out 0.4s;
-        transform: scale(1.05);
-    } */
-  }
+        transform-origin: center;
 
-  .merch-body {
-    padding: 1.5rem;
-    background-color: var(--card-color);
-    color: var(--title-color);
-    transition: all 0.4s ease-in-out;
+        figure {
+          margin: 0;
+          padding: 0;
+          aspect-ratio: 16 / 9;
+          overflow: hidden;
 
-    h2 {
-      text-align: center;
+          img {
+            max-width: 100%;
+            transform: scale(var(--image-scale));
+            transform-origin: center;
+            transition: all ease-in-out 0.4s;
+          }
+        }
+
+        .merch-body {
+          padding: 1.5rem;
+          background-color: var(--card-color);
+          color: var(--title-color);
+          transition: all 0.4s ease-in-out;
+
+          h2 {
+            text-align: center;
+          }
+        }
+      }
     }
   }
 
   .merch-card:has(:hover, :focus) {
-    --card-color: #d1d1d13b;
-    --card-color: #fbf4cb;
-    --title-color: #19565c;
+    // --card-color: #d1d1d13b;
+    // --card-color: #fbf4cb;
+    // --title-color: #19565c;
     --image-scale: 1.05;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  }
-
-  // Preorder Button
-  .preorder-btn {
-    border: none;
-    padding: 1rem 2.25rem;
-    margin: 2rem auto;
-    border-radius: 2rem;
-
-    &:link,
-    &:visited {
-      text-decoration: none;
-      font-weight: lighter;
-      font-size: 2.25rem;
-      border: 2px solid rgba(0, 0, 0, 0.02);
-      border-radius: 100px;
-
-      display: inline-block;
-      position: relative;
-
-      transition: all 0.3s ease;
-    }
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(#000, 0.2);
-    }
-
-    &:active {
-      transform: translateY(-1px);
-      box-shadow: 0 5px 5px rgba(#000, 0.2);
-    }
-
-    &--white {
-      background-color: #eee;
-      color: #10183c;
-    }
-
-    &::after {
-      content: "";
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      border-radius: 100px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transition: all 0.4s ease;
-    }
-
-    &--white::after {
-      background-color: #eee;
-    }
-
-    &:hover::after {
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
-    }
-
-    &--animated {
-      animation: moveInBottom 0.5s ease-out 2s;
-      animation-fill-mode: backwards;
-    }
-  }
-
-  .padding-full {
-    padding: 2rem 4rem;
   }
 }

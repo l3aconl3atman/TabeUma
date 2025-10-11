@@ -329,6 +329,12 @@ img {
   font-size: 4rem;
   padding: 2rem 4rem;
 }
+#about-us-section .about-us-vision {
+  margin: 0 4rem;
+}
+#about-us-section .about-us-vision h2 {
+  padding: 4rem 0;
+}
 
 [class^=about-us--flex]:not(:last-child) {
   margin-bottom: 5rem;
@@ -638,6 +644,9 @@ img {
   max-height: 90vh;
   padding: 0 2rem 2rem 2rem;
 }
+.hero .hero-title {
+  padding: 2rem 4rem;
+}
 .hero .hero-container {
   height: 80vh;
   width: 80vw;
@@ -655,11 +664,6 @@ img {
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-.gallery-page .gallery-title {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 4rem;
 }
 .gallery-page .img-container {
   margin-top: 2rem;
@@ -718,7 +722,6 @@ img {
   padding: 0 2rem;
 }
 #member-section .member-title {
-  font-size: 4rem;
   padding: 2rem 4rem;
 }
 #member-section .team-members {
@@ -742,7 +745,7 @@ img {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.8s;
+  transition: transform 0.5s;
   transform-style: preserve-3d;
 }
 #member-section .team-members .member-card .card-inner .card-front img {
@@ -761,12 +764,11 @@ img {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
   border-radius: 15px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.95);
   background: none;
   background-size: contain;
+  backface-visibility: hidden;
 }
 #member-section .team-members .member-card .card-inner .card-back {
   position: relative;
@@ -790,8 +792,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   background: url(../../img/Logo/logo-02.png) no-repeat center/contain;
-  filter: grayscale(0.8);
-  z-index: -1;
+  z-index: 0;
 }
 
 .socials {
@@ -845,7 +846,7 @@ img {
 
 .view-works-btn {
   padding: 1rem 2rem;
-  background-color: #8ae4fc;
+  background-color: ber #8ae4fc;
   color: white;
   border: none;
   border-radius: 5px;
@@ -860,22 +861,24 @@ img {
   background-color: #6eb6ca;
 }
 
-#merch-section .merch-title {
-  font-size: 4rem;
+#merch-section {
   padding: 2rem 4rem;
 }
-#merch-section .merch-area {
-  width: 160rem;
-  gap: 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+#merch-section .merch-title {
+  padding: 2rem 4rem;
 }
 #merch-section .flex {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
-#merch-section .merch-card {
+#merch-section .flex .merch-area {
+  width: 160rem;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#merch-section .flex .merch-area .merch-card {
   --title-color: black;
   --link-icon-opacity: 0;
   background: var(--card-color);
@@ -884,91 +887,30 @@ img {
   transition: all ease-in-out 0.4s;
   transform-origin: center;
 }
-#merch-section figure {
+#merch-section .flex .merch-area .merch-card figure {
   margin: 0;
   padding: 0;
   aspect-ratio: 16/9;
   overflow: hidden;
-  /* img:hover {
-      transition: all ease-in-out 0.4s;
-      transform: scale(1.05);
-  } */
 }
-#merch-section figure img {
+#merch-section .flex .merch-area .merch-card figure img {
   max-width: 100%;
   transform: scale(var(--image-scale));
   transform-origin: center;
   transition: all ease-in-out 0.4s;
 }
-#merch-section .merch-body {
+#merch-section .flex .merch-area .merch-card .merch-body {
   padding: 1.5rem;
   background-color: var(--card-color);
   color: var(--title-color);
   transition: all 0.4s ease-in-out;
 }
-#merch-section .merch-body h2 {
+#merch-section .flex .merch-area .merch-card .merch-body h2 {
   text-align: center;
 }
 #merch-section .merch-card:has(:hover, :focus) {
-  --card-color: #d1d1d13b;
-  --card-color: #fbf4cb;
-  --title-color: #19565c;
   --image-scale: 1.05;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
-#merch-section .preorder-btn {
-  border: none;
-  padding: 1rem 2.25rem;
-  margin: 2rem auto;
-  border-radius: 2rem;
-}
-#merch-section .preorder-btn:link, #merch-section .preorder-btn:visited {
-  text-decoration: none;
-  font-weight: lighter;
-  font-size: 2.25rem;
-  border: 2px solid rgba(0, 0, 0, 0.02);
-  border-radius: 100px;
-  display: inline-block;
-  position: relative;
-  transition: all 0.3s ease;
-}
-#merch-section .preorder-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-#merch-section .preorder-btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
-#merch-section .preorder-btn--white {
-  background-color: #eee;
-  color: #10183c;
-}
-#merch-section .preorder-btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s ease;
-}
-#merch-section .preorder-btn--white::after {
-  background-color: #eee;
-}
-#merch-section .preorder-btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-#merch-section .preorder-btn--animated {
-  animation: moveInBottom 0.5s ease-out 2s;
-  animation-fill-mode: backwards;
-}
-#merch-section .padding-full {
-  padding: 2rem 4rem;
 }
 
 .footer {
@@ -976,6 +918,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 6rem;
+  margin-bottom: 4rem;
 }
 .footer .logo-grp {
   margin: auto 0;

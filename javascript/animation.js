@@ -21,10 +21,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 let titleArray = [
   "Let's Explore the Land of Malaysia!",
   "一起來探討馬來西亞！",
-  "Marilah kita jelajahi tanah Malaysia!"
+  "Marilah kita jelajahi tanah Malaysia!",
 ];
-
-
 
 const mainTitle = document.querySelector(".main-title");
 
@@ -90,7 +88,6 @@ gsap.to(".footer", {
   duration: 3,
 });
 
-
 // Text //
 gsap.to("#main-title", {
   duration: 3,
@@ -98,36 +95,32 @@ gsap.to("#main-title", {
   delay: 12,
   repeat: -1,
   yoyo: true,
-  repeatDelay: 18
+  repeatDelay: 18,
 });
 
-gsap.to(".about-us-title", { 
+gsap.to(".about-us-title", {
   duration: 2,
   text: "關於我們",
   delay: 5,
   repeat: -1,
   yoyo: true,
-  repeatDelay:18
+  repeatDelay: 18,
 });
 
-gsap.to(".member-title", { 
+gsap.to(".member-title", {
   duration: 2,
   text: "組員介紹",
   delay: 5,
   repeat: -1,
   yoyo: true,
-  repeatDelay: 18
+  repeatDelay: 18,
 });
 
-gsap.to(".merch-title", { 
+gsap.to(".merch-title", {
   duration: 2,
   text: "周邊商品",
   delay: 5,
   repeat: -1,
   yoyo: true,
-  repeatDelay:18
+  repeatDelay: 18,
 });
-
-
-
-// Text //
