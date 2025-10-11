@@ -58,9 +58,8 @@
   }
 
   .merch-card:has(:hover, :focus) {
-    // --card-color: #d1d1d13b;
-    // --card-color: #fbf4cb;
-    // --title-color: #19565c;
+    --card-color: #fbf4cb;
+    --title-color: #19565c;
     --image-scale: 1.05;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;

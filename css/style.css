@@ -909,6 +909,8 @@ img {
   text-align: center;
 }
 #merch-section .merch-card:has(:hover, :focus) {
+  --card-color: #fbf4cb;
+  --title-color: #19565c;
   --image-scale: 1.05;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
@@ -955,18 +957,19 @@ img {
 }
 
 .trailer-page {
-  width: 100vw;
-  height: calc(100vh - 80px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  height: calc(100vh - 100px);
 }
 .trailer-page .vid-container {
-  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  padding: 2rem 4rem;
+}
+.trailer-page .vid-container video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 2rem;
 }
 
 .swiper {
