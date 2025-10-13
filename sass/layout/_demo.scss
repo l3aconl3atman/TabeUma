@@ -1,21 +1,17 @@
 @use "../abstracts";
 
-.demo-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-
-  .demo-title {
-    margin-bottom: abstracts.$margin-bottom;
-    font-size: abstracts.$title-large;
-  }
+.demo-section {
+  height: calc(100vh - 100px);
 
   .demo-container {
-    height: 75vh;
-    width: 80vw;
-    border-radius: 1rem;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    iframe {
+      width: 80vw;
+      height: 75vh;
+      border-radius: 2rem;
+    }
   }
 }

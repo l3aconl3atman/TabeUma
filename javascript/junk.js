@@ -1,88 +1,136 @@
 "use strict";
 
-// setInterval(() => {
-//   location.reload();
-// }, 15000);
+// ****************************** VARIABLES ****************************** //
+// Overlay
+const overlay = document.querySelector(".overlay");
 
-// Gallery
-// prevBtn.addEventListener("click", function () {
-//   currentCarouselItem--;
-//   if (currentCarouselItem < 0) {
-//     currentCarouselItem = gallerySY.length - 1;
-//     console.log(currentCarouselItem);
-//   }
-// });
+// Sections
+const header = document.querySelector("header");
+const nav = document.querySelector("nav");
+const heroSection = document.querySelector("#hero-section");
+const aboutUsSection = document.querySelector("#about-us-section");
 
-// nextBtn.addEventListener("click", function () {
-//   currentCarouselItem++;
-//   if (currentCarouselItem > 2) {
-//   }
-//   console.log(currentCarouselItem);
-// });
+// Pop Up Gallery
+const popUp = document.querySelectorAll(".pop-up");
+const closePopUp = document.querySelectorAll(".close-pop-up");
+const openPopUp = document.querySelectorAll(".open-pop-up");
+const openGallery = document.querySelectorAll(".open-gallery");
+const galleryOverlay = document.querySelectorAll(".gallery");
+const hideGallery = document.querySelectorAll(".gallery-close-btn");
 
-// Day / Night Mode //
-// document.querySelector(".checkbox").addEventListener("change", function () {
-//   const navBtns = document.querySelectorAll(".nav-btn");
-//   const socials = document.querySelectorAll(".socials");
-//   const cards = document.querySelectorAll(".card");
+// Copy Function Variables
+const copyBtn = document.querySelectorAll(".copy-btn");
+const textToCopy = document.querySelectorAll(".text-to-copy");
+const message = document.getElementById("message");
+// Copy Function Variables
 
-//   if (this.checked) {
-//     document.querySelector(".header").style.backgroundColor = "#181818";
-//     document.body.style.backgroundColor = "rgb(50, 50, 50)";
-//     document.body.style.backgroundColor = "#121212";
-//     document.body.style.color = "white";
-//     document.querySelector(".footer").style.backgroundColor = "#181818";
-//     console.log("Night Mode Activated! 🌙");
+// ****************************** VARIABLES ****************************** //
 
-//     cards.forEach(function (card) {
-//       card.style.backgroundColor = "#181818";
-//     });
+// ****************************** LINE POP UP ****************************** //
+const showPopUp = function (i) {
+  popUp[i].classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  document.body.classList.add("disable-scroll");
+};
 
-//     socials.forEach(function (social) {
-//       social.style.fill = "white";
-//     });
+const hidePopUp = function (i) {
+  popUp[i].classList.add("hidden");
+  overlay.classList.add("hidden");
+  document.body.classList.remove("disable-scroll");
+};
 
-//     navBtns.forEach(function (navBtn) {
-//       navBtn.style.color = "white";
-//     });
-//     // setInterval();
-//   } else {
-//     document.querySelector(".header").style.backgroundColor = "";
-//     document.body.style.backgroundColor = "";
-//     document.body.style.color = "black";
-//     document.querySelector(".footer").style.backgroundColor = "";
+for (let i = 0; i < openPopUp.length; i++) {
+  openPopUp[i].addEventListener("click", () => showPopUp(i));
+  closePopUp[i].addEventListener("click", () => hidePopUp(i));
+  overlay.addEventListener("click", () => hidePopUp(i));
+}
+// ****************************** LINE POP UP ****************************** //
 
-//     console.log("Day Mode Activated! 🌤️");
+// ****************************** GALLERY ****************************** //
+const showGallery = function (i) {
+  galleryOverlay[i].classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  document.body.classList.add("disable-scroll");
+};
 
-//     cards.forEach(function (card) {
-//       card.style.backgroundColor = "";
-//     });
+const closeGallery = function (i) {
+  galleryOverlay[i].classList.add("hidden");
+  overlay.classList.add("hidden");
+  document.body.classList.remove("disable-scroll");
+};
 
-//     socials.forEach(function (social) {
-//       social.style.fill = "";
-//     });
+for (let i = 0; i < openGallery.length; i++) {
+  openGallery[i].addEventListener("click", () => showGallery(i));
+  hideGallery[i].addEventListener("click", () => closeGallery(i));
+  overlay.addEventListener("click", () => closeGallery(i));
+}
+// ****************************** GALLERY ****************************** //
 
-//     navBtns.forEach(function (navBtn) {
-//       navBtn.style.color = "#212529"; // Or the default color for day mode
-//     });
-//   }
-// });
-// Day / Night Mode //
+// Copy Function Event Listener
+for (let i = 0; copyBtn.length > i; i++) {
+  copyBtn[i].addEventListener("click", async function () {
+    try {
+      await navigator.clipboard.writeText(textToCopy[i].textContent);
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  });
+}
 
-// Canvas
-// function displayImageOnCanvas(src) {
-//   const img = new Image();
-//   img.src = src;
+// Audio (Temporary Off)
+window.onload = function () {
+  let audio = new Audio("../Audio/AYAM DIDIK - INSTRUMENTAL.mp3");
+  audio.play();
+  audio.loop = true;
+  audio.volume = 0.1;
+};
 
-//   img.onload = function () {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+const imagesState = Array.from(document.querySelectorAll(".parallax-img")).map(
+  (img) => ({
+    el: img,
+    speed: parseFloat(img.dataset.speed),
+    y: 0,
+  })
+);
 
-//     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-//   };
-// }
+let latestScrollY = 0;
+let ticking = false;
 
-// document.querySelectorAll(".gallery-photo").forEach((photo) => {
-//   photo.addEventListener("click", function () {
-//     displayImageOnCanvas(photo.src);
-//   });
-// });
+window.addEventListener("scroll", () => {
+  latestScrollY = window.pageYOffset;
+  if (!ticking) requestAnimationFrame(updateParallax);
+  ticking = true;
+});
+
+function updateParallax() {
+  imagesState.forEach((obj) => {
+    const targetY = -latestScrollY * obj.speed;
+    obj.y += (targetY - obj.y) * 0.1;
+    obj.el.style.transform = `translate3d(0, ${obj.y}px, 0)`;
+  });
+  requestAnimationFrame(updateParallax);
+}
+
+const goToTopBtn = document.querySelector(".go-to-top");
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 500) {
+    goToTopBtn.classList.add("show");
+  } else {
+    goToTopBtn.classList.remove("show");
+  }
+});
+
+goToTopBtn.addEventListener("click", function () {
+  header.scrollIntoView({ behavior: "smooth" });
+});
+
+const stickyTrigger = 300;
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > stickyTrigger) {
+    nav.classList.add("sticky");
+  } else {
+    nav.classList.remove("sticky");
+  }
+});

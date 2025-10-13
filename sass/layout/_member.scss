@@ -1,17 +1,18 @@
 @use "../abstracts";
 
 #member-section {
-  .member-title {
-    padding: 2rem 4rem;
-  }
   flex-direction: column;
   align-items: center;
   display: flex;
   padding: 0 2rem;
+  padding-bottom: 4rem;
+
+  .member-title {
+    padding: 2rem 4rem;
+  }
 
   .team-members {
     min-width: 80rem;
-    max-width: 78rem;
     display: flex;
     justify-content: space-between;
     gap: 3rem;
@@ -22,6 +23,7 @@
       width: 24.625rem;
       min-height: 620px;
       perspective: 1000px;
+      transform: rotateY(0deg);
 
       &:hover .card-inner {
         transform: rotateY(180deg);
@@ -34,10 +36,11 @@
         transition: transform 0.5s;
         transform-style: preserve-3d;
 
-        .card-front {
+        .card-face {
           img {
             margin-bottom: 2rem;
             border-radius: 1rem 1rem 0 0;
+            transform: rotateY(0deg);
           }
 
           h3 {
@@ -48,18 +51,21 @@
             font-size: abstracts.$font-smedium;
           }
         }
-        .card-front,
+
+        .card-face,
         .card-back {
           text-align: center;
           position: absolute;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
           border-radius: 15px;
           box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-          // background: rgba(255, 255, 255, 0.95);
           background: none;
           background-size: contain;
           backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
 
         .card-back {
@@ -145,7 +151,7 @@
 
 .view-works-btn {
   padding: 1rem 2rem;
-  background-color: ber#8ae4fc;
+  background-color: #8ae4fc;
   color: white;
   border: none;
   border-radius: 5px;

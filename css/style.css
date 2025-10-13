@@ -259,7 +259,7 @@ body {
 .gallery .swiper .swiper-button-next {
   color: white;
 }
-.gallery .swiper .swipder-scrollbar {
+.gallery .swiper .swiper-scrollbar {
   color: green;
   z-index: 9;
 }
@@ -389,22 +389,18 @@ img {
   border-radius: 30rem;
 }
 
-.demo-page {
+.demo-section {
+  height: calc(100vh - 100px);
+}
+.demo-section .demo-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
 }
-.demo-page .demo-title {
-  margin-bottom: 2rem;
-  font-size: 4rem;
-}
-.demo-page .demo-container {
-  height: 75vh;
+.demo-section .demo-container iframe {
   width: 80vw;
-  border-radius: 1rem;
-  overflow: hidden;
+  height: 75vh;
+  border-radius: 2rem;
 }
 
 .game-board {
@@ -720,13 +716,13 @@ img {
   align-items: center;
   display: flex;
   padding: 0 2rem;
+  padding-bottom: 4rem;
 }
 #member-section .member-title {
   padding: 2rem 4rem;
 }
 #member-section .team-members {
   min-width: 80rem;
-  max-width: 78rem;
   display: flex;
   justify-content: space-between;
   gap: 3rem;
@@ -737,6 +733,7 @@ img {
   width: 24.625rem;
   min-height: 620px;
   perspective: 1000px;
+  transform: rotateY(0deg);
 }
 #member-section .team-members .member-card:hover .card-inner {
   transform: rotateY(180deg);
@@ -748,20 +745,23 @@ img {
   transition: transform 0.5s;
   transform-style: preserve-3d;
 }
-#member-section .team-members .member-card .card-inner .card-front img {
+#member-section .team-members .member-card .card-inner .card-face img {
   margin-bottom: 2rem;
   border-radius: 1rem 1rem 0 0;
+  transform: rotateY(0deg);
 }
-#member-section .team-members .member-card .card-inner .card-front h3 {
+#member-section .team-members .member-card .card-inner .card-face h3 {
   font-size: 2.25rem;
 }
-#member-section .team-members .member-card .card-inner .card-front p {
+#member-section .team-members .member-card .card-inner .card-face p {
   font-size: 1.5rem;
 }
-#member-section .team-members .member-card .card-inner .card-front,
+#member-section .team-members .member-card .card-inner .card-face,
 #member-section .team-members .member-card .card-inner .card-back {
   text-align: center;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border-radius: 15px;
@@ -769,6 +769,7 @@ img {
   background: none;
   background-size: contain;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 #member-section .team-members .member-card .card-inner .card-back {
   position: relative;
@@ -846,7 +847,7 @@ img {
 
 .view-works-btn {
   padding: 1rem 2rem;
-  background-color: ber #8ae4fc;
+  background-color: #8ae4fc;
   color: white;
   border: none;
   border-radius: 5px;
@@ -921,7 +922,6 @@ img {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 6rem;
-  margin-bottom: 4rem;
 }
 .footer .logo-grp {
   margin: auto 0;
