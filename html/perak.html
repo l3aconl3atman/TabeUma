@@ -9,25 +9,47 @@
     <title>逛喫遊馬 TabeUma (霹靂)</title>
   </head>
   <body>
-    <header class="header section-padding--side">
-      <a href="/index.html" class="header__logo-box">
-        <img src="/img/Logo/logo-02.png" alt="" class="header__logo" />
-      </a>
-      <div class="header__nav">
-        <ul class="nav">
-          <li><a href="trailer.html" class="nav-btn mandarin-text">影片</a></li>
-          <li>
-            <a href="game.html" class="nav-btn mandarin-text">翻牌游戲</a>
-          </li>
-          <li><a href="demo.html" class="nav-btn mandarin-text">3D游戲</a></li>
-          <li><a href="gallery.html" class="nav-btn mandarin-text">圖庫</a></li>
-        </ul>
-      </div>
+    <div class="parallax-container">
+      <img
+        src="../img/Food/food-left.png"
+        class="parallax-img left"
+        data-speed="0.4"
+        alt="…"
+      />
+      <img
+        src="../img/Food/food-right.png"
+        class="parallax-img right"
+        data-speed="0.2"
+        alt="…"
+      />
+    </div>
+    <header class="header">
+      <nav>
+        <a href="/index.html" class="header__logo-box">
+          <img src="../img/Logo/logo-02.png" alt="" class="header__logo" />
+        </a>
+        <div class="header__nav">
+          <ul class="nav-links">
+            <li>
+              <a href="trailer.html" class="nav-btn mandarin-text">影片</a>
+            </li>
+            <li>
+              <a href="game.html" class="nav-btn mandarin-text">翻牌游戲</a>
+            </li>
+            <li>
+              <a href="demo.html" class="nav-btn mandarin-text">3D游戲</a>
+            </li>
+            <li>
+              <a href="gallery.html" class="nav-btn mandarin-text">圖庫</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <main class="hero-page section-padding--full" id="hero-section">
+    <main class="hero" id="hero-section">
       <h1 class="hero-title mandarin-text" id="hero-title">霹靂</h1>
-      <div class="hero-container scrollable-div">
+      <div class="hero-container">
         <iframe
           src="https://my.spline.design/perak-8b2e0f6172919770a728fa205444d466/"
           frameborder="0"
@@ -36,11 +58,7 @@
         ></iframe>
       </div>
     </main>
-
-    <!-- Script -->
     <script type="module" src="/javascript/main.js"></script>
     <script src="../javascript/swiper.js"></script>
-
-    <!-- Script -->
   </body>
 </html>
